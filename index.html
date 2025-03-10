@@ -8,12 +8,18 @@
     <style>
 a{text-decoration: none;}
 /* Navigation */
+.dropdown-toggle{color: #00f800}
+.navbar-light  .navbar-nav .nav-link {color: #00f800}
 .nav-link:active{color:  #00f800}
+.searchbtn{width: 90px; background-color: #00f800; color: #fff; border: none;}
+
+/* Navigation End */
+
 /* Categories */
  
 .card-category {
   box-sizing: border-box;
-  width: 240px;
+  width: 280px;
   height: 80px;
   background: rgba(204, 252, 207, 0.58);
   border: 1px solid white;
@@ -48,10 +54,10 @@ a{text-decoration: none;}
 }
 
 .card-product {
- width: 190px;
+ width: 200px;
  height: 280px;
  border-radius: 20px;
- background: #f5f5f5;
+ background: #eef4ecd0;
  position: relative;
  padding: 1.8rem;
  border: 2px solid #c3c6ce;
@@ -105,22 +111,13 @@ a{text-decoration: none;}
 }
 /* product End */
 
-/* Location */
-.mapcontainer {
-  width: 100%;
- 
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
-}
-/* Location End */
+
 
 /* brochures */
 
 /* From Uiverse.io by MAnorbaeva5406 */ 
 button {
-  color: rgb(253, 119, 119);
+  color: rgb(255, 255, 255);
   position: relative;
   overflow: hidden;
   outline: none;
@@ -148,32 +145,39 @@ button {
   text-transform: uppercase;
   transition: all 0.6s ease;
 }
+.brochurebtn {
+  background:transparent;
+  border: 1px solid  hsl(118, 94%, 32%);
+  box-shadow: 0 0 5px  hsl(118, 94%, 32%);
+  overflow: visible;
+}
 
-.hover-btn {
+.brochurebtn::before,
+.brochurebtn::after {
+  content: "";
   position: absolute;
-  inset: 0;
-  background-color: hsl(0, 0%, 0%);
-  transform: translate(0%, 100%);
+  inset: -1px;
+  border: 3px dotted  hsl(118, 94%, 32%);
+  border-radius: inherit;
+  animation: pulseOut 2s ease-out infinite;
+  opacity: 0;
 }
 
-.default-btn span {
-  color: hsl(0, 0%, 100%);
+.brochurebtn::after {
+  animation-delay: 0.5s;
 }
 
-.hover-btn span {
-  color: hsl(0, 0%, 100%);
+@keyframes brochurebtn {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
 }
 
-button:hover .default-btn {
-  transform: translate(0%, -100%);
-}
-
-button:hover .hover-btn {
-  transform: translate(0%, 0%);
-}
-.css-i6dzq1 {
-  color: black;
-}
 
 /* brochures End */
 
@@ -285,17 +289,17 @@ ul{
   display: inline-block;
   height: 40px;
   width: 40px;
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgb(255, 255, 255);
   margin:0 10px 10px 0;
   text-align: center;
   line-height: 40px;
   border-radius: 50%;
-  color: #ffffff;
+  color:hsl(118, 94%, 32%);
   transition: all 0.5s ease;
 }
 .footer-col .social-links a:hover{
   color: #24262b;
-  background-color: #ffffff;
+  background-color: #33ff18;
 }
 
 /*responsive*/
@@ -309,6 +313,8 @@ ul{
   .footer-col{
     width: 100%;
 }
+
+.brochurebtn{visibility: hidden;}
 }
 
 
@@ -319,10 +325,10 @@ ul{
 
 <body class="bg-light container-fluid ">
     <!-- Navbar -->
-    <nav class="navbar  navbar-expand-lg navbar-light bg-success">
+    <nav class="navbar  navbar-expand-lg navbar-light ">
         <div class="container-fluid">
-          <a class="navbar-brand nav-link" href="index.html">360DegreeExport</a>
-          <button class="navbar-toggler badge-success  navbar-dark" type="button " data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <a class="navbar-brand nav-link" href="index.html"><img src="src/icons/360_logog_short-removebg-preview[1].png" width="120" alt=""></a>
+          <button class="navbar-toggler badge-success  " type="button " data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon "></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -335,29 +341,48 @@ ul{
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Product-Categories
                 </a>
-                <ul class="dropdown-menu navbar-light bg-success">
+                <ul class="dropdown-menu navbar-light ">
 
 
                   
-                  <li><a class="dropdown-item" href="HTML/MILLETS & FLOURS.html">MILLETS & FLOURS</a></li>
-                  <li><a class="dropdown-item" href="HTML/BAKERY PRODUCTS.html">BAKERY PRODUCTS</a></li>
-                  <li><a class="dropdown-item" href="HTML/BLANDED & WHOLE SPICES.html">BLANDED & WHOLE SPICES</a></li>
-                  <li><a class="dropdown-item" href="HTML/DRINK & BEVERAGES.html">DRINK & BEVERAGES</a></li>
-                  <li><a class="dropdown-item" href="HTML/DRY FRUITS & HEALTHY SNACKS.html">DRY FRUITS & HEALTHY SNACKS</a></li>
-                  <li><a class="dropdown-item" href="HTML/GRAINS.html">GRAINS</a></li>
-                  <li><a class="dropdown-item" href="HTML/GROCERIES.html">GROCERIES</a></li>
-                  <li><a class="dropdown-item" href="HTML/HOUSEHOLD PRODUCTS .html">HOUSEHOLD PRODUCTS</a></li>
-                  <li><a class="dropdown-item" href="HTML/NATURE'S 360.html">NATURE'S 360</a></li>
-                  <li><a class="dropdown-item" href="HTML/PUJA (PRAYER) SAMAGRI.html">PUJA (PRAYER) SAMAGRI</a></li>
+                  <li><a class="nav-link dropdown-item" href="HTML/MILLETS&FLOURS.html">MILLETS & FLOURS</a></li>
+
+                  <li><a class="nav-link dropdown-item" href="HTML/REGIONAL&BASMATIRICE.html">REGIONAL & BASMATI RICE</a></li>
+                  
+                  <li><a class="nav-link dropdown-item" href="HTML/LENTILS.html">LENTILS</a></li>
+
+                  <li><a class="nav-link dropdown-item" href="HTML/SNACKS.html"> SNACKS</a></li>
+
+                  <li><a class="nav-link dropdown-item" href="HTML/BAKERYPRODUCTS.html">BAKERY PRODUCTS</a></li>
+
+                  <li><a class="nav-link dropdown-item" href="HTML/FROZENVEG.&FRUITS.html">FROZEN VEG. & FRIUTS</a></li>
+
+                  <li><a class="nav-link dropdown-item" href="HTML/BLANDED&WHOLESPICES.html">BLANDED & WHOLE SPICES</a></li>
+
+                  <li><a class="nav-link dropdown-item" href="HTML/PICKLES&CANNEDFOOD.html">PICKLES & CANNED FOOD</a></li>
+
+                  <li><a class="nav-link dropdown-item" href="HTML/JAGGER&SUGAR.html">JAGGER & SUGAR</a></li>
                  
+                  <li><a class="nav-link dropdown-item" href="HTML/DRYFRUITY&HEALTHYSNACKS.html">DRY FRUITS & HEALTHY SNACKS</a></li>
+
+                  <li><a class=" nav-link dropdown-item" href="HTML/DRINK&BEVERAGES.html">DRINK & BEVERAGES</a></li>
                   
+                  <a class="nav-link dropdown-item" href="HTML/AMULPRODUCTS.html">AMUL PRODUCTS</a>
+
+                  <a class="nav-link dropdown-item" href="HTML/POOJASAMAGRI.html">POOJA SAMAGRI</a>
+
+                  <a class="nav-link dropdown-item" href="HTML/HOUSEHOLDPRODUCTS.html">HOUSEHOLD PRODUCTS</a>
+
+                  
+
                 </ul>
               </li>
+              
               <li class="nav-item">
-                <a class="nav-link" href="#">Other Product's</a>
+                <a class="nav-link" href="/HTML/VISION&MISSION.html">Vision & Mission</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About Us</a>
+                <a class="nav-link" href="HTML/Aboutus.html">About Us</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="HTML/contactus.html">Contact Us</a>
@@ -366,12 +391,15 @@ ul{
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success nav-link" type="submit">Search</button>
+              <button class="searchbtn  btn btn-outline-success  fs-6" type="submit">Search</button>
             </form>
           </div>
         </div>
       </nav>
 <!-- Navbar End -->
+
+
+
  <!-- Carousel (Banner) -->
   <div class=" h-25 d-inline-block Banner">
     
@@ -405,36 +433,49 @@ ul{
   <!-- Carousel End -->
 
 <!--Categories-->
-<h2 class="text-center mt-5 ">Categories</h2>
+<h2 class="text-center mt-5 ">CATEGORIE'S</h2>
 <div class="d-flex justify-content-center  flex-wrap ">
-  <a href="HTML/MILLETS & FLOURS.html"> <div class="card-category ms-3  mt-3">MILLETS & FLOURS</div></a>
-  <a href="HTML/BAKERY PRODUCTS.html"> <div class="card-category ms-3  mt-3">BAKERY PRODUCTS</div></a>
-  <a href="HTML/BLANDED & WHOLE SPICES.html"> <div class="card-category ms-3  mt-3">BLANDED & WHOLE SPICES</div></a>
-  <a href="HTML/DRINK & BEVERAGES.html"> <div class="card-category ms-3  mt-3">DRINK & BEVERAGES</div></a>
-  <a href="HTML/DRY FRUITS & HEALTHY SNACKS.html"> <div class="card-category ms-3  mt-3">DRY FRUITS & HEALTHY SNACKS</div></a>
-  
-  
-  
-  <a href="HTML/GRAINS.html"> <div class="card-category ms-3  mt-3">GRAINS</div></a>
-  <a href="HTML/GROCERIES.html"> <div class="card-category ms-3  mt-3">GROCERIES</div></a>
-  <a href="HTML/HOUSEHOLD PRODUCTS.html"> <div class="card-category ms-3  mt-3">HOUSEHOLD PRODUCTS</div></a>
-  <a href="HTML/NATUR'S 360.html"> <div class="card-category ms-3  mt-3">NATURE'S 360</div></a>
-  <a href="HTML/PUJA (PRAYER) SAMAGRI.html"> <div class="card-category ms-3  mt-3">PUJA (PRAYER) SAMAGRI</div></a>
+  <a href="HTML/MILLETS&FLOURS.html"> <div class="card-category ms-3  mt-3">MILLETS & FLOURS</div></a>
  
+  <a href="HTML/REGIONAL&BASMATIRICE.html"> <div class="card-category ms-3  mt-3">REGIONAL & BASMATI RICE</div></a>
+
+  <a href="HTML/LENTILS.HTML"> <div class="card-category ms-3  mt-3">LENTILS</div></a>
+
+  <a href="HTML/SNACKS.html"> <div class="card-category ms-3  mt-3">SNACKS</div></a>
+
+  <a href="HTML/BAKERYPRODUCTS.html"> <div class="card-category ms-3  mt-3">BAKERY PRODUCTS</div></a>
   
+  <a href="HTML/FROZENVEG.&FRUITS.html"> <div class="card-category ms-3  mt-3">FROZEN VEG. & FRUITS</div></a>
+  
+  <a href="HTML/BLANDED&WHOLESPICES.html"> <div class="card-category ms-3  mt-3">BLANDED & WHOLE SPICES</div></a>
+
+  <a href="HTML/PICKLES&CANNEDFOOD.html"> <div class="card-category ms-3  mt-3">PICKLES & CANNED FOOD</div></a>
+
+
+  <a href="HTML/JAGGER&SUGAR.html"> <div class="card-category ms-3  mt-3">JAGGER & SUGAR</div></a>
+ 
+  <a href="HTML/DRYFRUITY&HEALTHYSNACKS.html"> <div class="card-category ms-3  mt-3">DRYFRUIT & HEALTHY SNACKS</div></a>
+
+  <a href="HTML/DRINK&BEVERAGES.html"> <div class="card-category ms-3  mt-3">DRINK & BEVERAGES</div></a>
+  
+  <a href="HTML/AMULPRODUCTS.html"> <div class="card-category ms-3  mt-3">AMUL PRODUCTS</div></a>
+
+  <a href="HTML/POOJASAMAGRI.html"> <div class="card-category ms-3  mt-3">POOJA SAMAGRI </div></a>
+
+  <a href="HTML/HOUSEHOLDPRODUCTS.html"> <div class="card-category ms-3  mt-3"> HOUSEHOLD PRODUCTS</div></a>
   
 </div>
 <!--Categories End-->
 
 <!-- product -->
  <div class="product">
-    <h2 class="text-center mt-5 ">Product's</h2>
+    <h2 class="text-center mt-5 mb-5">Product's</h2>
 
     <div class=" d-flex flex-wrap justify-content-center product-container">
            
-      <a href="HTML/contactus.html"><div class="card-product ms-4 mt-5">
+      <a href="HTML/contactus.html"><div class="card-product ms-4 mt-3 mb-3">
         <div class="card-product-details">
-          <img src="../src/All Nature 360 products/MILLETS & FLOURS/CHAKI WHEAT ATTA.png "height="180" alt="Chakki Wheat Atta ">
+          <img src="src/All Nature 360 products/MILLETS & FLOURS/CHAKI WHEAT ATTA.png "height="180" alt="Chakki Wheat Atta ">
           <p class="text-body text-center">Chakki Wheat Atta  </p>
         </div>
         <button class="card-product-button">More info</button>
@@ -442,36 +483,36 @@ ul{
     </a>
       
 
-      <a href="HTML/contactus.html"><div class="card-product ms-4 mt-5">
+      <a href="HTML/contactus.html"><div class="card-product ms-4 mt-3 mb-3">
         <div class="card-product-details">
-          <img src="../src/All Nature 360 products/MILLETS & FLOURS/Sharbati Gold Atta.jpg "height="180" alt="Sharbati Gold Atta">
+          <img src="src/All Nature 360 products/MILLETS & FLOURS/Sharbati Gold Atta.jpg "height="180" alt="Sharbati Gold Atta">
           <p class="text-body text-center">Sharbati Gold Atta</p>
         </div>
         <button class="card-product-button">More info</button>
       </div>
     </a>
 
-    <a href="HTML/contactus.html"><div class="card-product ms-4 mt-5">
+    <a href="HTML/contactus.html"><div class="card-product ms-4 mt-3 mb-3">
       <div class="card-product-details">
-        <img src="../src/All Nature 360 products/MILLETS & FLOURS/MULTIGRAIN ATTA.png "height="210" alt="Multigrain Atta">
+        <img src="src/All Nature 360 products/MILLETS & FLOURS/MULTIGRAIN ATTA.png "height="180" alt="Multigrain Atta">
         <p class="text-body text-center">Multigrain Atta</p>
       </div>
       <button class="card-product-button">More info</button>
     </div>
   </a>
 
-  <a href="HTML/contactus.html"><div class="card-product ms-4 mt-5">
+  <a href="HTML/contactus.html"><div class="card-product ms-4 mt-3 mb-3">
     <div class="card-product-details">
-      <img src="../src/All Nature 360 products/MILLETS & FLOURS/SUGAR RELEASE CONTROL ATTA.png"height="220" alt="Sugar Release Control Atta">
+      <img src="src/All Nature 360 products/MILLETS & FLOURS/SUGAR RELEASE CONTROL ATTA.png"height="205" alt="Sugar Release Control Atta">
       <p class="text-body text-center">Sugar Release Control Atta</p>
     </div>
     <button class="card-product-button">More info</button>
   </div>
 </a>
 
-<a href="HTML/contactus.html"><div class="card-product ms-4 mt-5">
+<a href="HTML/contactus.html"><div class="card-product ms-4 mt-3 mb-3">
   <div class="card-product-details">
-    <img src="../src/All Nature 360 products/MILLETS & FLOURS/Gluten Free atta.png "height="180" alt="Gluten Free Atta">
+    <img src="src/All Nature 360 products/MILLETS & FLOURS/Gluten Free atta.png "height="180" alt="Gluten Free Atta">
     <p class="text-body text-center">Gluten Free Atta</p>
   </div>
   <button class="card-product-button">More info</button>
@@ -479,27 +520,27 @@ ul{
 </a>
 
 
-<a href="HTML/contactus.html"><div class="card-product ms-4 mt-5">
+<a href="HTML/contactus.html"><div class="card-product ms-4 mt-3 mb-3">
   <div class="card-product-details">
-    <img src="../src/All Nature 360 products/MILLETS & FLOURS/Bhakhari_Flour.jpg "height="180" alt="Bhakhari_Flour">
-    <p class="text-body text-center">BhakhariFlour</p>
+    <img src="src/All Nature 360 products/MILLETS & FLOURS/Bhakhari_Flour.jpg "height="180" alt="Bhakhari_Flour">
+    <p class="text-body text-center">Bhakhari Flour</p>
   </div>
   <button class="card-product-button">More info</button>
 </div>
 </a>
 
-<a href="HTML/contactus.html"><div class="card-product ms-4 mt-5">
+<a href="HTML/contactus.html"><div class="card-product ms-4 mt-3 mb-3">
   <div class="card-product-details">
-    <img src="../src/All Nature 360 products/MILLETS & FLOURS/JOWAR Flour.jpg"height="180" alt="Jowar Flour">
+    <img src="src/All Nature 360 products/MILLETS & FLOURS/JOWAR Flour.jpg"height="180" alt="Jowar Flour">
     <p class="text-body text-center">jowar Flour</p>
   </div>
   <button class="card-product-button">More info</button>
 </div>
 </a>
 
-<a href="HTML/contactus.html"><div class="card-product ms-4 mt-5">
+<a href="HTML/contactus.html"><div class="card-product ms-4 mt-3 mb-3">
   <div class="card-product-details">
-    <img src="../src/All Nature 360 products/MILLETS & FLOURS/Makai_Flour.jpg"height="180" alt="Makai Flour">
+    <img src="src/All Nature 360 products/MILLETS & FLOURS/Makai_Flour.jpg"height="180" alt="Makai Flour">
     <p class="text-body text-center">Makai Flour</p>
   </div>
   <button class="card-product-button">More info</button>
@@ -507,18 +548,18 @@ ul{
 </a>
 
 
-<a href="HTML/contactus.html"><div class="card-product ms-4 mt-5">
+<a href="HTML/contactus.html"><div class="card-product ms-4 mt-3 mb-3">
   <div class="card-product-details">
-    <img src="../src/All Nature 360 products/MILLETS & FLOURS/RAGI Flour.jpg" height="180" alt="Ragi Flour">
+    <img src="src/All Nature 360 products/MILLETS & FLOURS/RAGI Flour.jpg" height="180" alt="Ragi Flour">
     <p class="text-body text-center">Ragi Flour</p>
   </div>
   <button class="card-product-button">More info</button>
 </div>
 </a>
 
-<a href="HTML/contactus.html"><div class="card-product ms-4 mt-5">
+<a href="HTML/contactus.html"><div class="card-product ms-4 mt-3 mb-4">
   <div class="card-product-details">
-    <img src="../src/All Nature 360 products/MILLETS & FLOURS/RICE Flour.jpg"height="180" alt="Rice Flour">
+    <img src="src/All Nature 360 products/MILLETS & FLOURS/RICE Flour.jpg"height="180" alt="Rice Flour">
     <p class="text-body text-center"> Rice Flour</p>
   </div>
   <button class="card-product-button">More info</button>
@@ -530,9 +571,40 @@ ul{
  </div>
  <!-- product End -->
 
+
+
+ <!--Map-->
+ <div class="map ms-4 mt-4 mb-4">
+  <h2 class="text-center mt-5 mb-5">Our Current Global Reach</h2>
+  <img src="src/icons/Map.png" alt="map" width="100%" height="100%">
+ </div>
+
+  <!--Map End-->
+
+<!--Distributor-->
+<div class="distributor ms-4 mt-4 mb-4 ">
+  <h2 class="text-center mt-5 mb-1">Become a Distributor</h2>
+<div class="ditributorcontainer">
+
+  <img src="src/icons/store.png" alt="store"  height="200px" width="200px" class="d-block mx-auto">
+  <p class="text-center">We are looking for distributors in India and abroad. If you are interested in becoming a distributor, please click the button below .</p>
+  <div class=" distributorbtn text-center">
+    <a href="HTML/contactus.html"><button class="btn btn-success">Become a Distributor</button></a>
+    </div>
+    
+  
+</div>
+  
+  
+        
+
+
+
+
+
  <!-- Brochure -->
-<a href="https://heyzine.com/flip-book/f8e7acecb7.html#page/1 "><!-- From Uiverse.io by MAnorbaeva5406 --> 
-  <button class="position-fixed bottom-0 end-0 m-5">
+<a target="_blank" href="https://heyzine.com/flip-book/f8e7acecb7.html#page/1 "><!-- From Uiverse.io by MAnorbaeva5406 --> 
+  <button class="position-fixed bottom-0  m-5 brochurebtn">
     <div class="default-btn">
       <svg
         viewBox="0 0 24 24"
@@ -550,26 +622,7 @@ ul{
       </svg>
       <span>Brochure</span>
     </div>
-    <div class="hover-btn">
-      <svg
-        viewBox="0 0 24 24"
-        width="20"
-        height="20"
-        stroke="#ffd300"
-        stroke-width="2"
-        fill="none"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="css-i6dzq1"
-      >
-        <circle cx="9" cy="21" r="1"></circle>
-        <circle cx="20" cy="21" r="1"></circle>
-        <path
-          d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
-        ></path>
-      </svg>
-      <span>Shop Now</span>
-    </div>
+    
   </button>
   </a>
  
@@ -578,20 +631,13 @@ ul{
 
  <!-- WhatsApp icon -->
 
-<a href=""><button class="btn-whatsapp neon-pulse position-fixed bottom-50 end-0 m-5 ">
+<a href=""><button class="btn-whatsapp neon-pulse position-fixed bottom-0 end-0 m-5 ">
   <img src="src/icons/whatsapp.png" width="50px" alt=" WhatsApp" />
 </button></a>
 
   <!-- WhatsApp icon End -->
 
-<!-- Location -->
-<div class="map mt-5">
-  <div class="mapcontainer"><iframe src="https://www.google.com/maps/d/embed?mid=1vdoBetmYPPA7frP3oQlEgefTPoyrADk&hl=en&ehbc=2E312F" width="640" height="480"></iframe>
-  </div>
-  
-  
-</div>
- <!-- Location End -->
+
 
  <!-- Footer -->
 
@@ -599,29 +645,28 @@ ul{
      <div class="container-fluid">
       <div class="row">
         <div class="footer-col">
-          <h4>company</h4>
-          <ul>
-            <li><a href="#">about us</a></li>
-            <li><a href="#">our services</a></li>
-            <li><a href="#">privacy policy</a></li>
-            
-          </ul>
+          <h4>About Us</h4>
+         <p class="text-light">UNIVERSAL FOOD RETREAT PRIVATE LIMITED is a leading exporter of Indian food products, committed to quality and global standards. With 25+ years of experience, our brands Kanaiya and Nature’s 360° are trusted worldwide.</p>
         </div>
         <div class="footer-col">
-          <h4>get help</h4>
+          <h4>Company</h4>
           <ul>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">shipping</a></li>
+            <li><a href="HTML/Aboutus.html">About Us</a></li>
+            <li><a href="#">Our services</a></li>
+            <li><a href="#">Vision & Mission</a></li>
+            <li><a href="#">privacy policy</a></li>
            
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Location</h4>
+          <h4>Get in Touch</h4>
           <ul>
-            <li><a href="#">India</a></li>
-            <li><a href="#">South Africa</a></li>
-            <li><a href="#">London</a></li>
-            <li><a href="#">China</a></li>
+            <li><a target="_blank" href="https://maps.app.goo.gl/bRnepFNjQ9qXr7sBA">Plot no 5250, near 4th south road, beaide khwaja chowkdi, GIDC, Ankleshwar-393001
+            </a></li>
+            <li><a target="_blank" href="mailto:info@360degreeexport.Com
+              ">info@360degreeexport.Com
+              </a></li>
+            <li><a href="tel:+91 9879133911 " class="call-button">📞+91 9879133911 </a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -637,35 +682,6 @@ ul{
      </div>
   </footer>
   <!-- Footer End -->
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
- <!-- Contact Us end -->
-
-
-
-
 
 
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

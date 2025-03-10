@@ -17,86 +17,12 @@ a{  text-decoration: none;}
 
 /* Contact Form */
 
-.contact-container {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    background-color: #9df09d76;
-  }
-
-  .contact-form, .contact-image {
-    width: 50%;
-    padding: 40px;
-  }
-
-  .contact-form h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 28px;
-  }
-
-  .form-group {
-    margin-bottom: 15px;
-  }
-
-  .form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-
-  .form-group input, .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-
-  .submit-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #00f800;
-    color: white;
-    border: none;
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .submit-btn:hover {
-    background-color: #00c700;
-  }
-
-  .contact-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-
-  /* Hide Image on Small Screens */
-  @media (max-width: 768px) {
-    .contact-container {
-      flex-direction: column;
-      height: auto;
-    }
-
-    .contact-form {
-      width: 100%;
-    }
-
-    .contact-image {
-      display: none; /* Hide image on small screens */
-    }
-  }
+.about-us {
+  padding: 50px 0;
+  background-color: #9df09d76;
+}
 
 /* Contact Form End */
-
-
 
       
       /* brochures */
@@ -310,7 +236,7 @@ a{  text-decoration: none;}
 </head>
 
 <body class="bg-light container-fluid  ">
-   <!-- Navbar -->
+    <!-- Navbar -->
  <nav class="navbar  navbar-expand-lg navbar-light ">
   <div class="container-fluid">
     <a class="navbar-brand nav-link" href="../index.html"><img src="../src/icons/360_logog_short-removebg-preview[1].png" width="120" alt=""></a>
@@ -381,39 +307,71 @@ a{  text-decoration: none;}
 </nav>
 <!-- Navbar End -->
  
-<h2 class="text-center mt-5 ">CONTACT US</h2>
+<h2 class="text-center mt-5 mb-3 ">ABOUT US</h2>
 
-<!-- Contact Form -->
-<div class="contact-container">
-  <div class="contact-form">
-    <h2>Get In Touch</h2>
-    <p>Fill out the form below to send us a message</p>
 
-    <form action="#" method="post">
-      <div class="form-group">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone</label>
-        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-      </div>
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="4" placeholder="Enter your message" required></textarea>
-      </div>
-      <button type="submit" class="submit-btn">Send Message</button>
-    </form>
-  </div>
-  <div class="contact-image">
-    <img src="../src/icons/contact-us.jpg" alt="Contact Us">
-  </div>
-</div>
-<!-- Contact Form End -->
+<!-- About Us -->
+ <section class="about-us lh-lg" id="about-us">
+    <div class="container">
+ <div class="aboutusimage">
+  <img src="../src/icons/aboutus.jpg" alt="Aboutus" width="100%" height="100%">
+ </div>
+
+        <p class="m-4">Here we would like to give you a detailed introduction to my company, 
+            UNIVERSAL FOOD RETREAT PRIVATE LIMITED. From day one to 
+            now, UNIVERSAL FOOD RETREAT PRIVATE LIMITED has emerged 
+            and grown exponentially and diversified as a major manufacturer and 
+            exporter of Indian food products, grocery, spices and many other 
+            categories. Within 5 years we evolved as a magnificent Export company 
+            and spread our wings internationally. We are currently available in 
+            China, Hong Kong, Singapore, Maldives, New Zealand, Malawi, 
+            Mozambique, South Africa, United Kingdom, Canada, Botswana. 
+            Our major focus is to provide a pure quality of product and ensure our 
+            policies that every product is being manufactured and packed in a facility 
+            that is free of contamination, and making them 100% compliant 
+            with the competent authority of importing in different countries. 
+            Our team of experienced people in this industry takes every possible 
+            precaution to keep the freshness of our products, right from the scratch 
+            to the manufacturing process and the final stage of packaging and 
+            shipment. </p>
+
+
+ <!--Map-->
+ <div class="map ms-4 mt-4 mb-4">
+  <h2 class="text-center mt-5 mb-5">Our Current Global Reach</h2>
+  <img src="..\src/icons/Map.png" alt="map" width="100%" height="100%">
+ </div>
+
+  <!--Map End-->
+
+
+
+
+            <h3 class="text-center mt-5 mb-3">SINCE 1994 </h3>
+           <p class="m-4"> We are operating in the domestic market for the last 25 years and 
+            launched our very own Kanaiya Brand. We have pioneered ourselves in 
+            providing the best products without compromising on the product's 
+            quality and taste. 
+            Our commitment to on-time delivery and client satisfaction helped us to 
+            become a major supplier of Indian food products to different countries 
+            such as China, Singapore, Taiwan, Maldives, South Africa & GCC, West 
+            Africa, Ukraine, Hong Kong. As a food product manufacturer, we have 
+            introduced our very own brand Nature's 360° which is most popular in 
+            Maldives, South Africa, Hong Kong, Ukraine. Moreover, it comes under 
+            UNIVERSAL FOOD RETREAT PRIVATE LIMITED, most demanded 
+            product list. 
+            Our very own brand Nature's 360° has been widely accepted in our very 
+            own country and foreign countries as well. Our one motto is to generate 
+            foreign exchange for our country, generate employment in this sector 
+            and serve our overseas and domestic clients in every possible manner. 
+            Apart from that, we have been socially active and have successfully 
+            conducted programs to fight COVID and help during a COVID pandemic. 
+            Now, as we are serving & offering a majority of INDIAN GROCERY 
+            PRODUCTS and we are proudly announcing ourselves as a 
+            UNIVERSAL FOOD RETREAT PRIVATE LIMITED. </p>
+    </div>
+ </section>
+
 
 
 
