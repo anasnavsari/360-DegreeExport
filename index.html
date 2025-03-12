@@ -51,6 +51,10 @@ a{text-decoration: none;}
 
 .product-container{
   background-color: #9df09d76;
+  border: 1px solid white;
+  box-shadow: 10px -10px 5px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+  border-radius: 17px;
 }
 
 .card-product {
@@ -111,6 +115,55 @@ a{text-decoration: none;}
 }
 /* product End */
 
+/* Map */
+.mapimage{
+  justify-self: center;
+  width: 90%;
+  height: 90%;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  
+}
+.mapimage:hover{
+  border: 2px solid #00f800;
+  transform: scale(1.01);
+  transition: all 0.9s ease;
+}
+
+.contries {
+  box-sizing: border-box;
+  width: 120px;
+  height: 50px;
+  background: rgba(204, 252, 207, 0.58);
+  border: 1px solid white;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+  border-radius: 17px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  font-weight: bolder;
+  color: rgb(0, 0, 0);
+}
+
+.contries:hover {
+  border: 2px solid#00f800;
+  transform: scale(1.09);
+}
+
+
+
+/* Map End */
+
+hr.rounded {
+  margin: 0 ;
+  border-top: 3px dotted #00f800;
+  border-radius: 5px;
+}
 
 
 /* brochures */
@@ -277,11 +330,11 @@ ul{
   color: #ffffff;
   text-decoration: none;
   font-weight: 300;
-  color: #bbbbbb;
+ 
   display: block;
   transition: all 0.3s ease;
 }
-.footer-col ul li a:hover{
+.footer-col  ul li a:hover {
   color: #ffffff;
   padding-left: 8px;
 }
@@ -334,44 +387,44 @@ ul{
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link " aria-current="page" href="index.html">Home</a>
+                <a class="nav-link active text-dark" aria-current="page" href="index.html">Home</a>
               </li>
               
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Product-Categories
+                <a class="nav-link text-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Product Categories
                 </a>
                 <ul class="dropdown-menu navbar-light ">
 
 
                   
-                  <li><a class="nav-link dropdown-item" href="HTML/MILLETS&FLOURS.html">MILLETS & FLOURS</a></li>
+                  <li><a class="nav-link text-dark dropdown-item" href="HTML/MILLETS&FLOURS.html">MILLETS & FLOURS</a></li>
 
-                  <li><a class="nav-link dropdown-item" href="HTML/REGIONAL&BASMATIRICE.html">REGIONAL & BASMATI RICE</a></li>
+                  <li><a class="nav-link text-dark dropdown-item" href="HTML/REGIONAL&BASMATIRICE.html">REGIONAL & BASMATI RICE</a></li>
                   
-                  <li><a class="nav-link dropdown-item" href="HTML/LENTILS.html">LENTILS</a></li>
+                  <li><a class="nav-link text-dark dropdown-item" href="HTML/LENTILS.html">LENTILS</a></li>
 
-                  <li><a class="nav-link dropdown-item" href="HTML/SNACKS.html"> SNACKS</a></li>
+                  <li><a class="nav-link text-dark dropdown-item" href="HTML/SNACKS.html"> SNACKS</a></li>
 
-                  <li><a class="nav-link dropdown-item" href="HTML/BAKERYPRODUCTS.html">BAKERY PRODUCTS</a></li>
+                  <li><a class="nav-link text-dark dropdown-item" href="HTML/BAKERYPRODUCTS.html">BAKERY PRODUCTS</a></li>
 
-                  <li><a class="nav-link dropdown-item" href="HTML/FROZENVEG.&FRUITS.html">FROZEN VEG. & FRIUTS</a></li>
+                  <li><a class="nav-link text-dark dropdown-item" href="HTML/FROZENVEG.&FRUITS.html">FROZEN VEG. & FRIUTS</a></li>
 
-                  <li><a class="nav-link dropdown-item" href="HTML/BLANDED&WHOLESPICES.html">BLANDED & WHOLE SPICES</a></li>
+                  <li><a class="nav-link text-dark dropdown-item" href="HTML/BLANDED&WHOLESPICES.html">BLANDED & WHOLE SPICES</a></li>
 
-                  <li><a class="nav-link dropdown-item" href="HTML/PICKLES&CANNEDFOOD.html">PICKLES & CANNED FOOD</a></li>
+                  <li><a class="nav-link text-dark dropdown-item" href="HTML/PICKLES&CANNEDFOOD.html">PICKLES & CANNED FOOD</a></li>
 
-                  <li><a class="nav-link dropdown-item" href="HTML/JAGGER&SUGAR.html">JAGGER & SUGAR</a></li>
+                  <li><a class="nav-link text-dark dropdown-item" href="HTML/JAGGER&SUGAR.html">JAGGER & SUGAR</a></li>
                  
-                  <li><a class="nav-link dropdown-item" href="HTML/DRYFRUITY&HEALTHYSNACKS.html">DRY FRUITS & HEALTHY SNACKS</a></li>
+                  <li><a class="nav-link text-dark dropdown-item" href="HTML/DRYFRUITY&HEALTHYSNACKS.html">DRY FRUITS & HEALTHY SNACKS</a></li>
 
-                  <li><a class=" nav-link dropdown-item" href="HTML/DRINK&BEVERAGES.html">DRINK & BEVERAGES</a></li>
+                  <li><a class=" nav-link text-dark dropdown-item" href="HTML/DRINK&BEVERAGES.html">DRINK & BEVERAGES</a></li>
                   
-                  <a class="nav-link dropdown-item" href="HTML/AMULPRODUCTS.html">AMUL PRODUCTS</a>
+                  <a class="nav-link text-dark dropdown-item" href="HTML/AMULPRODUCTS.html">AMUL PRODUCTS</a>
 
-                  <a class="nav-link dropdown-item" href="HTML/POOJASAMAGRI.html">POOJA SAMAGRI</a>
+                  <a class="nav-link text-dark dropdown-item" href="HTML/POOJASAMAGRI.html">POOJA SAMAGRI</a>
 
-                  <a class="nav-link dropdown-item" href="HTML/HOUSEHOLDPRODUCTS.html">HOUSEHOLD PRODUCTS</a>
+                  <a class="nav-link text-dark dropdown-item" href="HTML/HOUSEHOLDPRODUCTS.html">HOUSEHOLD PRODUCTS</a>
 
                   
 
@@ -379,13 +432,13 @@ ul{
               </li>
               
               <li class="nav-item">
-                <a class="nav-link" href="/HTML/VISION&MISSION.html">Vision & Mission</a>
+                <a class="nav-link text-dark" href="/HTML/VISION&MISSION.html">Vision & Mission</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="HTML/Aboutus.html">About Us</a>
+                <a class="nav-link text-dark" href="HTML/Aboutus.html">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="HTML/contactus.html">Contact Us</a>
+                <a class="nav-link text-dark" href="HTML/contactus.html">Contact Us</a>
               </li>
              
             </ul>
@@ -433,7 +486,7 @@ ul{
   <!-- Carousel End -->
 
 <!--Categories-->
-<h2 class="text-center mt-5 ">CATEGORIE'S</h2>
+<h2 class="text-center mt-5 ">CATEGORIES</h2>
 <div class="d-flex justify-content-center  flex-wrap ">
   <a href="HTML/MILLETS&FLOURS.html"> <div class="card-category ms-3  mt-3">MILLETS & FLOURS</div></a>
  
@@ -469,7 +522,7 @@ ul{
 
 <!-- product -->
  <div class="product">
-    <h2 class="text-center mt-5 mb-5">Product's</h2>
+    <h2 class="text-center mt-5 mb-5">Our Products</h2>
 
     <div class=" d-flex flex-wrap justify-content-center product-container">
            
@@ -574,12 +627,55 @@ ul{
 
 
  <!--Map-->
- <div class="map ms-4 mt-4 mb-4">
-  <h2 class="text-center mt-5 mb-5">Our Current Global Reach</h2>
-  <img src="src/icons/Map.png" alt="map" width="100%" height="100%">
- </div>
+ <h2 class="text-center mt-5 mb-5">Our Current Global Reach</h2>
 
+ <div class="mapimage mb-3"> <img src="src/icons/Map.png" alt="map" width="100%" height="100%"></div>
+  <div class="container-fluid">
+    <h2 class="text-center mt-5 ">Countries We Deliver To</h2>
+    <div class="d-flex justify-content-center  flex-wrap ">
+      <div class="card-category contries ms-3  mt-3">India</div>
+     
+       <div class=" contries ms-3  mt-3">China</div>
+    
+       <div class=" contries ms-3  mt-3">Hong Kong</div>
+     
+       <div class=" contries ms-3  mt-3">Singapore</div>
+    
+       <div class=" contries ms-3  mt-3">Maldives</div>
+      
+       <div class=" contries ms-3  mt-3">New Zealand</div>
+      
+       <div class=" contries ms-3  mt-3">Malawi</div>
+    
+       <div class=" contries ms-3  mt-3">Mozambique</div>
+    
+    
+       <div class=" contries ms-3  mt-3">South Africa</div>
+     
+       <div class=" contries ms-3  mt-3">Canada</div>
+      
+       <div class=" contries ms-3  mt-3">Botswana</div>
+    
+       
+      
+    </div>
+
+  </div>
   <!--Map End-->
+
+  <hr class="rounded mt-5">
+  <hr class="rounded">
+  <hr class="rounded">
+  <hr class="rounded">
+  <hr class="rounded">
+  <hr class="rounded">
+  <hr class="rounded">
+  <hr class="rounded">
+  <hr class="rounded">
+  <hr class="rounded mb-5">
+  
+
+
 
 <!--Distributor-->
 <div class="distributor ms-4 mt-4 mb-4 ">
@@ -587,9 +683,9 @@ ul{
 <div class="ditributorcontainer">
 
   <img src="src/icons/store.png" alt="store"  height="200px" width="200px" class="d-block mx-auto">
-  <p class="text-center">We are looking for distributors in India and abroad. If you are interested in becoming a distributor, please click the button below .</p>
+  <p class="text-center">If you are interested in becoming a distributor, please click the button below .</p>
   <div class=" distributorbtn text-center">
-    <a href="HTML/contactus.html"><button class="btn btn-success">Become a Distributor</button></a>
+    <a href="HTML/contactus.html"><button class="btn btn-success">Become Our Distributor</button></a>
     </div>
     
   
@@ -651,22 +747,21 @@ ul{
         <div class="footer-col">
           <h4>Company</h4>
           <ul>
-            <li><a href="HTML/Aboutus.html">About Us</a></li>
-            <li><a href="#">Our services</a></li>
-            <li><a href="#">Vision & Mission</a></li>
-            <li><a href="#">privacy policy</a></li>
+            <li class="text-light"><a href="HTML/Aboutus.html">About Us</a></li>
+            <li class="text-light"><a href="#">Our services</a></li>
+            <li class="text-light"><a href="#">Vision & Mission</a></li>
+            <li class="text-light"><a href="#">privacy policy</a></li>
            
           </ul>
         </div>
         <div class="footer-col">
           <h4>Get in Touch</h4>
           <ul>
-            <li><a target="_blank" href="https://maps.app.goo.gl/bRnepFNjQ9qXr7sBA">Plot no 5250, near 4th south road, beaide khwaja chowkdi, GIDC, Ankleshwar-393001
-            </a></li>
-            <li><a target="_blank" href="mailto:info@360degreeexport.Com
-              ">info@360degreeexport.Com
-              </a></li>
-            <li><a href="tel:+91 9879133911 " class="call-button">📞+91 9879133911 </a></li>
+            <li class="text-light">Plot no 5250, near 4th south road, beaide khwaja chowkdi, GIDC, Ankleshwar-393001
+            </li>
+            <li class="text-light">info@360degreeexport.Com
+              </li>
+            <li class="text-light">📞+91 9879133911 </li>
           </ul>
         </div>
         <div class="footer-col">
