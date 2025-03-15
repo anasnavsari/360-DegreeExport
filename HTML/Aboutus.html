@@ -13,6 +13,85 @@ a{  text-decoration: none;}
 .nav-link:active{color:  #00f800}
 .searchbtn{width: 90px; background-color: #00f800; color: #fff; border: none;}
 
+/* Navbar Loading Animation */
+.navbar {
+  animation: fadeInDown 2s ease-in-out;
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effect for navbar links */
+.navbar-nav .nav-link {
+  position: relative;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #00f800;
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover {
+  transform: scale(1.1); /* Zoom effect */
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Dropdown item hover effect */
+.dropdown-item {
+  transition: all 0.3s ease-in-out;
+}
+
+.dropdown-item:hover {
+  background-color: #007c00;
+  color: white !important;
+  transform: scale(1.1); /* Zoom effect */
+}
+
+/* Search Button Animation */
+.searchbtn {
+  padding: 5px 15px;
+  background-color: #00f800;
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.searchbtn:hover {
+  background-color: #007c00;
+  transform: scale(1.2); /* Zoom effect */
+}
+
+/* Navbar Brand (Logo) Hover Effect */
+.navbar-brand img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.2); /* Logo zoom effect */
+}
+
+
 /* Navigation End */
 
 /* Contact Form */
@@ -189,7 +268,7 @@ a{  text-decoration: none;}
         color: #ffffff;
         text-decoration: none;
         font-weight: 300;
-        color: #bbbbbb;
+        
         display: block;
         transition: all 0.3s ease;
       }
@@ -229,7 +308,7 @@ a{  text-decoration: none;}
       .brochurebtn{visibility: hidden;}
       }
       /* Footer End */
-
+   
 
     </style>
        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -246,55 +325,55 @@ a{  text-decoration: none;}
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="../index.html">Home</a>
+          <a class="nav-link  text-dark " aria-current="page" href="../index.html">Home</a>
         </li>
         
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link  text-dark  dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Product-Categories
           </a>
           <ul class="dropdown-menu navbar-light ">
 
 
             
-            <li><a class="nav-link dropdown-item" href="MILLETS&FLOURS.html">MILLETS & FLOURS</a></li>
+            <li><a class="nav-link  text-dark  dropdown-item" href="MILLETS&FLOURS.html">MILLETS & FLOURS</a></li>
 
-            <li><a class="nav-link dropdown-item" href="REGIONAL&BASMATIRICE.html">REGIONAL & BASMATI RICE</a></li>
+            <li><a class="nav-link  text-dark  dropdown-item" href="REGIONAL&BASMATIRICE.html">REGIONAL & BASMATI RICE</a></li>
             
-            <li><a class="nav-link dropdown-item" href="LENTILS.html">LENTILS</a></li>
+            <li><a class="nav-link  text-dark  dropdown-item" href="LENTILS.html">LENTILS</a></li>
 
-            <li><a class="nav-link dropdown-item" href="SNACKS.html"> SNACKS</a></li>
+            <li><a class="nav-link  text-dark  dropdown-item" href="SNACKS.html"> SNACKS</a></li>
 
-            <li><a class="nav-link dropdown-item" href="BAKERYPRODUCTS.html">BAKERY PRODUCTS</a></li>
+            <li><a class="nav-link   text-dark dropdown-item" href="BAKERYPRODUCTS.html">BAKERY PRODUCTS</a></li>
 
-            <li><a class="nav-link dropdown-item" href="FROZENVEG.&FRUITS.html">FROZEN VEG. & FRIUTS</a></li>
+            <li><a class="nav-link   text-dark dropdown-item" href="FROZENVEG.&FRUITS.html">FROZEN VEG. & FRIUTS</a></li>
 
-            <li><a class="nav-link dropdown-item" href="BLANDED&WHOLESPICES.html">BLANDED & WHOLE SPICES</a></li>
+            <li><a class="nav-link  text-dark  dropdown-item" href="BLANDED&WHOLESPICES.html">BLANDED & WHOLE SPICES</a></li>
 
-            <li><a class="nav-link dropdown-item" href="PICKLES&CANNEDFOOD.html">PICKLES & CANNED FOOD</a></li>
+            <li><a class="nav-link   text-dark dropdown-item" href="PICKLES&CANNEDFOOD.html">PICKLES & CANNED FOOD</a></li>
 
-            <li><a class="nav-link dropdown-item" href="JAGGER&SUGAR.html">JAGGER & SUGAR</a></li>
+            <li><a class="nav-link  text-dark  dropdown-item" href="JAGGER&SUGAR.html">JAGGER & SUGAR</a></li>
            
-            <li><a class="nav-link dropdown-item" href="DRYFRUITY&HEALTHYSNACKS.html">DRY FRUITS & HEALTHY SNACKS</a></li>
+            <li><a class="nav-link  text-dark  dropdown-item" href="DRYFRUITY&HEALTHYSNACKS.html">DRY FRUITS & HEALTHY SNACKS</a></li>
 
-            <li><a class=" nav-link dropdown-item" href="DRINK&BEVERAGES.html">DRINK & BEVERAGES</a></li>
+            <li><a class=" nav-link  text-dark  dropdown-item" href="DRINK&BEVERAGES.html">DRINK & BEVERAGES</a></li>
             
-            <a class="nav-link dropdown-item" href="AMULPRODUCTS.html">AMUL PRODUCTS</a>
+            <a class="nav-link  text-dark  dropdown-item" href="AMULPRODUCTS.html">AMUL PRODUCTS</a>
 
-                  <a class="nav-link dropdown-item" href="POOJASAMAGRI.html">POOJA SAMAGRI</a>
+                  <a class="nav-link  text-dark  dropdown-item" href="POOJASAMAGRI.html">POOJA SAMAGRI</a>
 
-                  <a class="nav-link dropdown-item" href="HOUSEHOLDPRODUCTS.html">HOUSEHOLD PRODUCTS</a>
+                  <a class="nav-link  text-dark  dropdown-item" href="HOUSEHOLDPRODUCTS.html">HOUSEHOLD PRODUCTS</a>
           </ul>
         </li>
         
         <li class="nav-item">
-          <a class="nav-link" href="VISION&MISSION.html">Vision & Mission</a>
+          <a class="nav-link text-dark  " href="VISION&MISSION.html">Vision & Mission</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Aboutus.html">About Us</a>
+          <a class="nav-link  text-dark " href="Aboutus.html">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contactus.html">Contact Us</a>
+          <a class="nav-link text-dark  " href="contactus.html">Contact Us</a>
         </li>
        
       </ul>
@@ -411,7 +490,7 @@ a{  text-decoration: none;}
 
  <!-- WhatsApp icon -->
 
-<a href=""><button class="btn-whatsapp neon-pulse position-fixed bottom-0 end-0 m-5 ">
+ <a href="https://wa.me/9879133911" target="_blank"><button class="btn-whatsapp neon-pulse position-fixed bottom-0 end-0 m-5 ">
   <img src="../src/icons/whatsapp.png" width="50px" alt=" WhatsApp" />
 </button></a>
 
@@ -441,12 +520,11 @@ a{  text-decoration: none;}
      <div class="footer-col">
        <h4>Get in Touch</h4>
        <ul>
-         <li><a target="_blank" href="https://maps.app.goo.gl/bRnepFNjQ9qXr7sBA">Plot no 5250, near 4th south road, beaide khwaja chowkdi, GIDC, Ankleshwar-393001
-         </a></li>
-         <li><a target="_blank" href="mailto:info@360degreeexport.Com
-           ">info@360degreeexport.Com
-           </a></li>
-         <li><a href="tel:+91 9879133911 " class="call-button">📞+91 9879133911 </a></li>
+         <li class="text-light">Plot no 5250, near 4th south road, beaide khwaja chowkdi, GIDC, Ankleshwar-393001
+         </li>
+         <li class="text-light">info@360degreeexport.Com
+           </li>
+         <li class="text-light">📞+91 9879133911 </li>
        </ul>
      </div>
      <div class="footer-col">
