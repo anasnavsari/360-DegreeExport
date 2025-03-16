@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360DEgreeExport</title>
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <style>a{text-decoration: none;}
+    /* Navigation */
+.dropdown-toggle{color: #00f800}
+.navbar-light  .navbar-nav .nav-link {color: #00f800}
+.nav-link:active{color:  #00f800}
+.searchbtn{width: 90px; background-color: #00f800; color: #fff; border: none;}
+
+/* Navbar Loading Animation */
+.navbar {
+  animation: fadeInDown 2s ease-in-out;
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effect for navbar links */
+.navbar-nav .nav-link {
+  position: relative;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #00f800;
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover {
+  transform: scale(1.1); /* Zoom effect */
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Dropdown item hover effect */
+.dropdown-item {
+  transition: all 0.3s ease-in-out;
+}
+
+.dropdown-item:hover {
+  background-color: #007c00;
+  color: white !important;
+  transform: scale(1.1); /* Zoom effect */
+}
+
+/* Search Button Animation */
+.searchbtn {
+  padding: 5px 15px;
+  background-color: #00f800;
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.searchbtn:hover {
+  background-color: #007c00;
+  transform: scale(1.2); /* Zoom effect */
+}
+
+/* Navbar Brand (Logo) Hover Effect */
+.navbar-brand img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.2); /* Logo zoom effect */
+}
+
+
+/* Navigation End */
+      
+      
+      
+      /* product */
+      
+      .product-container{
+        background-color: #9df09d76;
+        border: 1px solid white;
+        box-shadow: 10px -10px 5px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    border-radius: 17px;
+      }
+      
+      .card-product {
+       width: 300px;
+       height: 350px;
+       border-radius: 20px;
+       background: #eef4ecd0;
+       position: relative;
+       padding: 1.8rem;
+       border: 2px solid #c3c6ce;
+       transition: 0.5s ease-out;
+       overflow: visible;
+      }
+      
+      .card-product-details {
+       color: black;
+       height: 100%;
+       gap: .5em;
+       display: grid;
+       place-content: center;
+      }
+      
+      .card-product-button {
+       transform: translate(-50%, 125%);
+       width: 60%;
+       border-radius: 1rem;
+       border: none;
+       background-color: #00f800;
+       color: #fff;
+       font-size: 1rem;
+       padding: .5rem 1rem;
+       position: absolute;
+       left: 50%;
+       bottom: 0;
+       opacity: 0;
+       transition: 0.3s ease-out;
+      }
+      
+      .card-product-body {
+       color: rgb(134, 134, 134);
+      }
+      
+      /*Text*/
+      .text-title {
+       font-size: 1.5em;
+       font-weight: bold;
+      }
+      
+      /*Hover*/
+      .card-product:hover {
+       border-color: #00f800;
+       box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+      }
+      
+      .card-product:hover .card-product-button {
+       transform: translate(-50%, 50%);
+       opacity: 1;
+      }
+      /* product End */
+      
+      
+      
+      /* brochures */
+      
+      /* From Uiverse.io by MAnorbaeva5406 */ 
+      button {
+        color: rgb(255, 255, 255);
+        position: relative;
+        overflow: hidden;
+        outline: none;
+        cursor: pointer;
+        border-radius: 50px;
+        background-color: hsl(118, 94%, 32%);
+        border: solid 4px hsl(0, 0%, 100%);
+        font-family: inherit;
+      }
+      
+      .default-btn,
+      .hover-btn {
+        background-color: hsl(118, 94%, 32%);
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 15px 20px;
+        border-radius: 50px;
+        font-size: 17px;
+        font-weight: 500;
+        text-transform: uppercase;
+        transition: all 0.6s ease;
+      }
+      .brochurebtn {
+        background:transparent;
+        border: 1px solid  hsl(118, 94%, 32%);
+        box-shadow: 0 0 5px  hsl(118, 94%, 32%);
+        overflow: visible;
+      }
+      
+      .brochurebtn::before,
+      .brochurebtn::after {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        border: 3px dotted  hsl(118, 94%, 32%);
+        border-radius: inherit;
+        animation: pulseOut 2s ease-out infinite;
+        opacity: 0;
+      }
+      
+      .brochurebtn::after {
+        animation-delay: 0.5s;
+      }
+      
+      @keyframes brochurebtn {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1.5);
+          opacity: 0;
+        }
+      }
+      
+      
+      /* brochures End */
+      
+      /* WhatsApp icon */
+      .btn-whatsapp {
+        color:  hsl(118, 94%, 32%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        min-width: 20px;
+        z-index: 1;
+      }
+      
+      .neon-pulse {
+        background:transparent;
+        border: 2px solid  hsl(118, 94%, 32%);
+        box-shadow: 0 0 10px  hsl(118, 94%, 32%);
+        overflow: visible;
+      }
+      
+      .neon-pulse::before,
+      .neon-pulse::after {
+        content: "";
+        position: absolute;
+        inset: -7px;
+        border: 3px dotted  hsl(118, 94%, 32%);
+        border-radius: inherit;
+        animation: pulseOut 2s ease-out infinite;
+        opacity: 0;
+      }
+      
+      .neon-pulse::after {
+        animation-delay: 0.5s;
+      }
+      
+      @keyframes pulseOut {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1.5);
+          opacity: 0;
+        }
+      }
+      
+      /* WhatsApp icon End */
+      
+      /* Footer */
+      .container-fluidfootcontainer{
+        max-width: 1170px;
+        margin:auto;
+      }
+      .row{
+        display: flex;
+        flex-wrap: wrap;
+      }
+      ul{
+        list-style: none;
+      }
+      .footer-container{
+       
+        box-sizing: border-box;
+       
+          padding: 70px 0;
+      }
+      .footer-col{
+         width: 25%;
+         padding: 0 15px;
+      }
+      .footer-col h4{
+        font-size: 18px;
+        color: #ffffff;
+        text-transform: capitalize;
+        margin-bottom: 35px;
+        font-weight: 500;
+        position: relative;
+      }
+      .footer-col h4::before{
+        content: '';
+        position: absolute;
+        left:0;
+        bottom: -10px;
+        background-color: #e91e63;
+        height: 2px;
+        box-sizing: border-box;
+        width: 50px;
+      }
+      .footer-col ul li:not(:last-child){
+        margin-bottom: 10px;
+      }
+      .footer-col ul li a{
+        font-size: 16px;
+        text-transform: capitalize;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 300;
+        display: block;
+        transition: all 0.3s ease;
+      }
+      .footer-col ul li a:hover{
+        color: #ffffff;
+        padding-left: 8px;
+      }
+      .footer-col .social-links a{
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        background-color: rgb(255, 255, 255);
+        margin:0 10px 10px 0;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        color:hsl(118, 94%, 32%);
+        transition: all 0.5s ease;
+      }
+      .footer-col .social-links a:hover{
+        color: #24262b;
+        background-color: #33ff18;
+      }
+      
+      /*responsive*/
+      @media(max-width: 767px){
+        .footer-col{
+          width: 50%;
+          margin-bottom: 30px;
+      }
+      }
+      @media(max-width: 574px){
+        .footer-col{
+          width: 100%;
+      }
+      
+      .brochurebtn{visibility: hidden;}
+      }
+
+
+    </style>
+       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</h
+<body class="bg-light container-fluid">
+ <!-- Navbar -->
+ <nav class="navbar  navbar-expand-lg navbar-light ">
+  <div class="container-fluid">
+    <a class="navbar-brand nav-link" href="../index.html"><img src="../src/icons/360_logog_short-removebg-preview[1].png" width="120" alt=""></a>
+    <button class="navbar-toggler badge-success  " type="button " data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon "></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-dark " aria-current="page" href="../index.html">Home</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link  text-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Product Categories
+          </a>
+          <ul class="dropdown-menu navbar-light ">
+
+
+            
+            <li><a class="nav-link text-dark dropdown-item" href="MILLETS&FLOURS.html#page-heading">MILLETS & FLOURS</a></li>
+
+            <li><a class="nav-link text-dark dropdown-item" href="REGIONAL&BASMATIRICE.html#page-heading">REGIONAL & BASMATI RICE</a></li>
+            
+            <li><a class="nav-link text-dark dropdown-item" href="LENTILS.html#page-heading">LENTILS</a></li>
+
+            <li><a class="nav-link text-dark dropdown-item" href="SNACKS.html#page-heading"> SNACKS</a></li>
+
+            <li><a class="nav-link text-dark dropdown-item" href="BAKERYPRODUCTS.html#page-heading">BAKERY PRODUCTS</a></li>
+
+            <li><a class="nav-link text-dark dropdown-item" href="FROZENVEG.&FRUITS.html#page-heading">FROZEN VEG. & FRIUTS</a></li>
+
+            <li><a class="nav-link text-dark dropdown-item" href="BLANDED&WHOLESPICES.html#page-heading">BLANDED & WHOLE SPICES</a></li>
+
+            <li><a class="nav-link text-dark dropdown-item" href="PICKLES&CANNEDFOOD.html#page-heading">PICKLES & CANNED FOOD</a></li>
+
+            <li><a class="nav-link text-dark dropdown-item" href="JAGGER&SUGAR.html#page-heading">JAGGER & SUGAR</a></li>
+           
+            <li><a class="nav-link text-dark dropdown-item" href="DRYFRUITY&HEALTHYSNACKS.html#page-heading">DRY FRUITS & HEALTHY SNACKS</a></li>
+
+            <li><a class=" nav-link text-dark dropdown-item" href="DRINK&BEVERAGES.html#page-heading">DRINK & BEVERAGES</a></li>
+            
+            <a class="nav-link text-dark dropdown-item" href="AMULPRODUCTS.html#page-heading">AMUL PRODUCTS</a>
+
+            <a class="nav-link text-dark dropdown-item" href="POOJASAMAGRI.html#page-heading">POOJA SAMAGRI</a>
+
+            <a class="nav-link text-dark dropdown-item" href="HOUSEHOLDPRODUCTS.html#page-heading">HOUSEHOLD PRODUCTS</a>
+
+            
+          </ul>
+          
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link text-dark " href="VISION&MISSION.html">Vision & Mission</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark " href="Aboutus.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark " href="contactus.html">Contact Us</a>
+        </li>
+       
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="searchbtn  btn btn-outline-success  fs-6" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<!-- Navbar End -->
+ 
+
+<!-- Vision & Mission -->
+        
+
+
+        <section class="vision-mission mt-5 container-fluid">
+            <h2 class="text-center mt-5 mb-3" id="page-heading">🌍 Vision & Mission</h2>
+           
+            <h3 class="text-center mt-5 mb-3">🌟 Our Vision</h3>
+<p class="text-center mt-2 mb-2">At UNIVERSAL FOOD RETREAT PRIVATE LIMITED, our vision is to become a globally trusted brand in the Indian food industry. We aim to:</p>
+<p class="text-center mt-2 mb-2">✅ Bring Indian flavors to every corner of the world while maintaining the highest quality standards.</p>
+<p class="text-center mt-2 mb-2">✅ Promote sustainable food production, ensuring ethical sourcing and environmental responsibility.</p>
+<p class="text-center mt-2 mb-2" >✅ Expand our global presence while staying committed to traditional Indian tastes.</p>
+<p class="text-center mt-2 mb-2" >✅ Empower farmers and small-scale producers, supporting their growth through fair trade practices.</p>
+<p class="text-center mt-2 mb-2" >✅ Foster innovation by introducing new food products that align with changing consumer preferences.</p>
+<p class="text-center mt-2 mb-2" > We believe in creating a legacy of trust, excellence, and authenticity that future generations will carry forward.
+</p>
+
+<h3 class="text-center mt-5 mb-3">🎯 Our Mission</h3>
+
+<p class="text-center mt-2 mb-2">Our mission is to deliver excellence in food manufacturing and export while ensuring quality, innovation, and sustainability. Our key objectives include:</p>
+<p class="text-center mt-2 mb-2">🔹 Quality Assurance – Ensuring that all our products meet international food safety standards and are free from contamination.</p>
+<p class="text-center mt-2 mb-2">🔹 Global Expansion – Strengthening our presence in China, Hong Kong, Singapore, Maldives, New Zealand, Africa, UK, Canada, and more.</p>
+<p class="text-center mt-2 mb-2">🔹 Customer-Centric Approach – Understanding and meeting the diverse needs of customers worldwide.</p>
+<p class="text-center mt-2 mb-2">🔹 Innovation & R&D – Continuously researching new food products, packaging, and preservation techniques.</p>
+<p class="text-center mt-2 mb-2">🔹 Social Responsibility – Actively participating in CSR activities, including COVID-19 relief programs, food donations, and employment generation.</p>
+<p class="text-center mt-2 mb-2">🔹 Sustainability & Eco-Friendliness – Reducing carbon footprints through eco-friendly packaging and responsible sourcing.</p>
+
+
+<h3 class="text-center mt-5 mb-3">🌎 Our Global Presence</h3>
+
+<p class="text-center mt-2 mb-2">Over the years, UNIVERSAL FOOD RETREAT PRIVATE LIMITED has expanded its reach to several international markets, including:</p>
+
+<p class="text-center mt-2 mb-2" >📍 Asia: China, Hong Kong, Singapore, Maldives, Taiwan</p>
+<p class="text-center mt-2 mb-2" >📍 Africa: Malawi, Mozambique, South Africa, Botswana</p>
+<p class="text-center mt-2 mb-2" >📍 Europe: UK, Ukraine</p>
+<p class="text-center mt-2 mb-2" >📍 North America: Canada</p>
+<p class="text-center mt-2 mb-2" >📍 Oceania: New Zealand</p>
+<p class="text-center mt-2 mb-2" >📍 Middle East: GCC countries</p>
+
+<p class="text-center mt-5 mb-3" >Our goal is to expand even further, making Indian food products accessible to more countries while upholding quality and authenticity.</p>
+
+
+
+
+
+
+<h3 class="text-center mt-5 mb-3">🏆 Industry Participation & Expos</h3>
+
+<p class="text-center mt-2 mb-2"  >We have been an active participant in several international food expos to:</p>
+
+<p class="text-center mt-2 mb-2"  >✅ Showcase our premium-quality Indian food products.</p>
+<p class="text-center mt-2 mb-2"  >✅ Build strong business partnerships with international buyers and distributors.</p>
+<p class="text-center mt-2 mb-2"  >✅ Stay updated with the latest food industry trends and innovations.</p>
+<p class="text-center mt-2 mb-2"  >✅ Expand our brand awareness and reach new markets.</p>
+<p class="text-center mt-2 mb-2"  >Our participation in these expos has helped us strengthen our global presence and establish ourselves as a trusted Indian food exporter.</p>
+
+<div class="expo">
+    <div class=" d-flex flex-wrap justify-content-center ">
+    
+        <div class="card-product ms-4  mt-3 mb-3 ">
+          <div class="card-product-details">
+            <img src="../src/icons/expo1.jpg "height="320" width="280"  alt="expo1">
+          </div>
+        </div>
+      
+        
+  
+        <div class="card-product ms-4 mt-3 mb-3  ">
+          <div class="card-product-details">
+            <img src="../src/icons/expo2.jpg"height="320" width="280"  alt="expo2">
+          </div>
+        </div>
+      
+  
+      <div class="card-product ms-4 mt-3 mb-3 ">
+        <div class="card-product-details">
+          <img src="../src/icons/expo3.png"height="320" width="280"  alt="expo3">
+        </div>
+      </div>
+    
+    
+    </div>
+ 
+
+</div>
+<h3 class="text-center mt-5 mb-3">Why Choose Us?</h3>
+<p class="text-center mt-2 mb-2"  >✔ 25+ Years of Excellence in the domestic and international market.</p>
+<p class="text-center mt-2 mb-2"  >✔ Premium-Quality Products with strict quality control measures.</p>
+<p class="text-center mt-2 mb-2"  >✔ Wide Range of Indian Food Products – Groceries, spices, millets, lentils, and more.</p>
+<p class="text-center mt-2 mb-2"  >✔ On-Time Delivery to ensure customer satisfaction.</p>
+<p class="text-center mt-2 mb-2"  >✔ Eco-Friendly & Ethical Practices for a sustainable future.</p>
+
+
+
+
+
+
+            
+
+</section>
+        
+
+   
+<!-- Vision & Mission End -->
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Brochure -->
+ <a target="_blank" href="https://heyzine.com/flip-book/f8e7acecb7.html#page/1 "><!-- From Uiverse.io by MAnorbaeva5406 --> 
+  <button class="position-fixed bottom-0  m-5 brochurebtn">
+    <div class="default-btn">
+      <svg
+        viewBox="0 0 24 24"
+        width="20"
+        height="20"
+        stroke="#FFF"
+        stroke-width="2"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="css-i6dzq1"
+      >
+        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+        <circle cx="12" cy="12" r="3"></circle>
+      </svg>
+      <span>Brochure</span>
+    </div>
+    
+  </button>
+  </a>
+ 
+    
+ <!-- Brochure End -->
+
+ <!-- WhatsApp icon -->
+
+ <a href="https://wa.me/9879133911" target="_blank"><button class="btn-whatsapp neon-pulse position-fixed bottom-0 end-0 m-5 ">
+  <img src="../src/icons/whatsapp.png" width="50px" alt=" WhatsApp" />
+</button></a>
+
+  <!-- WhatsApp icon End -->
+
+
+
+ <!-- Footer -->
+
+ <footer class="footer-container mt-5 container-fluid bg-success">
+  <div class="container-fluid">
+   <div class="row">
+     <div class="footer-col">
+       <h4>About Us</h4>
+      <p class="text-light">UNIVERSAL FOOD RETREAT PRIVATE LIMITED is a leading exporter of Indian food products, committed to quality and global standards. With 25+ years of experience, our brands Kanaiya and Nature’s 360° are trusted worldwide.</p>
+     </div>
+     <div class="footer-col">
+       <h4>Company</h4>
+       <ul>
+         <li ><a href="Aboutus.html">About Us</a></li>
+         <li ><a href="#">Our services</a></li>
+         <li ><a href="#">Vision & Mission</a></li>
+         <li ><a href="#">privacy policy</a></li>
+        
+       </ul>
+     </div>
+     <div class="footer-col">
+       <h4>Get in Touch</h4>
+       <ul>
+         <li class="text-light">Plot no 5250, near 4th south road, beaide khwaja chowkdi, GIDC, Ankleshwar-393001
+         </li class="text-light">
+         <li class="text-light">info@360degreeexport.Com
+           </li>
+         <li class="text-light">📞+91 9879133911 </li>
+       </ul>
+     </div>
+     <div class="footer-col">
+       <h4>follow us</h4>
+       <div class="social-links">
+         <a href="#"><i class="fab fa-facebook-f"></i></a>
+         <a href="#"><i class="fab fa-twitter"></i></a>
+         <a href="#"><i class="fab fa-instagram"></i></a>
+         <a href="#"><i class="fab fa-linkedin-in"></i></a>
+       </div>
+     </div>
+   </div>
+  </div>
+</footer>
+  <!-- Footer End -->
+
+
+
+
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
