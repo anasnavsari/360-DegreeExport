@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+    
+/* Categories Section */
+.category-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 20px 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Wrapper for Categories */
+.category-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Multiple lines on large screens */
+  gap: 15px;
+  justify-content: center;
+  width: 90%;
+  max-width: 1200px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Category Card */
+.card-category {
+  width: 250px;
+  height: 80px;
+  background: rgba(204, 252, 207, 0.58);
+  border: 1px solid white;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+  border-radius: 17px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Hover Effect */
+.card-category:hover {
+  border: 2px solid #00f800;
+  transform: scale(1.08);
+  box-shadow: 0px 5px 15px rgba(0, 248, 0, 0.5);
+}
+
+/* Click Effect */
+.card-category:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
+
+/* Small Screens (Single Line Scroll with Buttons) */
+@media (max-width: 574px) {
+  .category-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    padding: 10px 0;
+    justify-content: flex-start;
+    max-width: 90%;
+  }
+
+  /* Hide Scrollbar */
+  .category-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Scroll Buttons */
+  .scroll-btn {
+    background-color: #00f800;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 10;
+    transition: 0.3s ease-in-out;
+    display: block;
+  }
+
+  #scroll-left {
+    left: 5px;
+  }
+
+  #scroll-right {
+    right: 5px;
+  }
+}
+
+/* Hide Scroll Buttons on Large Screens */
+@media (min-width: 575px) {
+  .scroll-btn {
+    display: none !important;
+  }
+}
+        
+        </style>
+</head>
+<body>
+<!-- Categories Section -->
+<h2 class="text-center mt-5">CATEGORIES</h2>
+<div class="category-container">
+  <button id="scroll-left" class="scroll-btn">&#10094;</button>
+  
+  <div class="category-wrapper">
+    <div class="categories">
+      <a href="HTML/MILLETS&FLOURS.html#page-heading"><div class="card-category">MILLETS & FLOURS</div></a>
+      <a href="HTML/REGIONAL&BASMATIRICE.html#page-heading"><div class="card-category">REGIONAL & BASMATI RICE</div></a>
+      <a href="HTML/LENTILS.html#page-heading"><div class="card-category">LENTILS</div></a>
+      <a href="HTML/SNACKS.html#page-heading"><div class="card-category">SNACKS</div></a>
+      <a href="HTML/BAKERYPRODUCTS.html#page-heading"><div class="card-category">BAKERY PRODUCTS</div></a>
+      <a href="HTML/FROZENVEG.&FRUITS.html#page-heading"><div class="card-category">FROZEN VEG. & FRUITS</div></a>
+      <a href="HTML/BLANDED&WHOLESPICES.html#page-heading"><div class="card-category">BLANDED & WHOLE SPICES</div></a>
+      <a href="HTML/PICKLES&CANNEDFOOD.html#page-heading"><div class="card-category">PICKLES & CANNED FOOD</div></a>
+      <a href="HTML/JAGGER&SUGAR.html#page-heading"><div class="card-category">JAGGER & SUGAR</div></a>
+      <a href="HTML/DRYFRUITY&HEALTHYSNACKS.html#page-heading"><div class="card-category">DRY FRUITS & HEALTHY SNACKS</div></a>
+      <a href="HTML/DRINK&BEVERAGES.html#page-heading"><div class="card-category">DRINK & BEVERAGES</div></a>
+      <a href="HTML/AMULPRODUCTS.html#page-heading"><div class="card-category">AMUL PRODUCTS</div></a>
+      <a href="HTML/POOJASAMAGRI.html#page-heading"><div class="card-category">POOJA SAMAGRI</div></a>
+      <a href="HTML/HOUSEHOLDPRODUCTS.html#page-heading"><div class="card-category">HOUSEHOLD PRODUCTS</div></a>
+    </div>
+  </div>
+
+  <button id="scroll-right" class="scroll-btn">&#10095;</button>
+</div>
+<!-- Categories End -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Get elements
+    const categoryWrapper = document.querySelector('.category-wrapper');
+    const scrollLeft = document.getElementById('scroll-left');
+    const scrollRight = document.getElementById('scroll-right');
+
+    // Scroll left
+    scrollLeft.addEventListener('click', () => {
+        console.log('Scroll left clicked');
+        categoryWrapper.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    // Scroll right
+    scrollRight.addEventListener('click', () => {
+        console.log('Scroll right clicked');
+        categoryWrapper.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+
+    // Hide buttons when not needed
+    const checkScrollButtons = () => {
+        console.log('Checking scroll buttons');
+        if (window.innerWidth > 574) {
+            scrollLeft.style.display = "none";
+            scrollRight.style.display = "none";
+        } else {
+            scrollLeft.style.display = categoryWrapper.scrollLeft > 0 ? 'block' : 'none';
+            scrollRight.style.display = categoryWrapper.scrollLeft < (categoryWrapper.scrollWidth - categoryWrapper.clientWidth) ? 'block' : 'none';
+        }
+    };
+
+    // Listen for scroll and resize
+    categoryWrapper.addEventListener('scroll', checkScrollButtons);
+    window.addEventListener('resize', checkScrollButtons);
+    checkScrollButtons(); // Initial check
+});
+</script>
+</body>
+</html>
