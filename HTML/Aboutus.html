@@ -8,6 +8,8 @@
     <style>
 a{  text-decoration: none;}
 /* Navigation */
+
+
 .dropdown-toggle{color: #00f800}
 .navbar-light  .navbar-nav .nav-link {color: #00f800}
 .nav-link:active{color:  #00f800}
@@ -16,6 +18,7 @@ a{  text-decoration: none;}
 /* Navbar Loading Animation */
 .navbar {
   animation: fadeInDown 2s ease-in-out;
+  
 }
 
 /* Keyframes for fade-in effect */
@@ -30,6 +33,39 @@ a{  text-decoration: none;}
   }
 }
 
+/* Dropdown on Hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Smooth Transition Effect */
+.dropdown-menu {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Animation for Dropdown Items */
+.dropdown-item {
+  padding: 8px 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+.dropdown-item:hover {
+  background-color: #007c00;
+  color: white !important;
+  transform: scale(1.05);
+}
+
 /* Hover effect for navbar links */
 .navbar-nav .nav-link {
   position: relative;
@@ -41,7 +77,6 @@ a{  text-decoration: none;}
   display: block;
   width: 0;
   height: 2px;
-  background-color: #00f800;
   transition: width 0.3s ease-in-out;
   position: absolute;
   bottom: -3px;
@@ -219,95 +254,196 @@ a{  text-decoration: none;}
       
       /* WhatsApp icon End */
       
-      /* Footer */
-      .container-fluidfootcontainer{
-        max-width: 1170px;
-        margin:auto;
-      }
-      .row{
+     /* Footer */
+
+
+/* Footer Background and Layout */
+.footer-container {
+    background: linear-gradient(135deg, #00c853, rgb(134, 134, 134));
+    
+    padding: 50px 20px;
+    color: white;
+    text-align: center;
+}
+
+/* Remove Bullet Points */
+.no-bullets {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Footer Columns */
+.footer-col {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    padding-left: 8px;
+}
+
+/* Social Links */
+.social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    margin: 0 10px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: green;
+    transition: all 0.5s ease;
+}
+
+.social-links a:hover {
+    background-color: #33ff18;
+}
+
+/* Contact Form Styling */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.custom-form-box {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 25px; /* More rectangular */
+    text-align: center;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    width: 550px; /* Slightly larger */
+    animation: fadeIn 1s ease-in-out;
+}
+
+.custom-form-box h2 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.custom-form-box p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.custom-form-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-form-box input,
+.custom-form-box textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px; /* Less rounded, more rectangular */
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Input Placeholder */
+.custom-form-box input::placeholder,
+.custom-form-box textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Input Focus */
+.custom-form-box input:focus,
+.custom-form-box textarea:focus {
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+    color: #000;
+}
+
+/* Submit Button */
+.custom-submit-btn {
+    background: linear-gradient(135deg, #00c853, #388e3c);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.custom-submit-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .row {
         display: flex;
         flex-wrap: wrap;
-      }
-      ul{
-        list-style: none;
-      }
-      .footer-container{
-       
-        box-sizing: border-box;
-       
-          padding: 70px 0;
-      }
-      .footer-col{
-         width: 25%;
-         padding: 0 15px;
-      }
-      .footer-col h4{
-        font-size: 18px;
-        color: #ffffff;
-        text-transform: capitalize;
-        margin-bottom: 35px;
-        font-weight: 500;
-        position: relative;
-      }
-      .footer-col h4::before{
-        content: '';
-        position: absolute;
-        left:0;
-        bottom: -10px;
-        background-color: #e91e63;
-        height: 2px;
-        box-sizing: border-box;
-        width: 50px;
-      }
-      .footer-col ul li:not(:last-child){
-        margin-bottom: 10px;
-      }
-      .footer-col ul li a{
-        font-size: 16px;
-        text-transform: capitalize;
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: 300;
-        
-        display: block;
-        transition: all 0.3s ease;
-      }
-      .footer-col ul li a:hover{
-        color: #ffffff;
-        padding-left: 8px;
-      }
-      .footer-col .social-links a{
-        display: inline-block;
-        height: 40px;
-        width: 40px;
-        background-color: rgb(255, 255, 255);
-        margin:0 10px 10px 0;
+        justify-content: center;
+    }
+    .footer-col {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-container {
+        height: auto;
+        padding: 40px 20px;
+    }
+    .footer-col {
+        width: 100%;
         text-align: center;
-        line-height: 40px;
-        border-radius: 50%;
-        color:hsl(118, 94%, 32%);
-        transition: all 0.5s ease;
-      }
-      .footer-col .social-links a:hover{
-        color: #24262b;
-        background-color: #33ff18;
-      }
-      
-      /*responsive*/
-      @media(max-width: 767px){
-        .footer-col{
-          width: 50%;
-          margin-bottom: 30px;
-      }
-      }
-      @media(max-width: 574px){
-        .footer-col{
-          width: 100%;
-      }
-      
-      .brochurebtn{visibility: hidden;}
-      }
-      /* Footer End */
+    }
+    .custom-form-box {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .custom-form-box {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+/* Footer End */
    
 
     </style>
@@ -316,74 +452,79 @@ a{  text-decoration: none;}
 
 <body class="bg-light container-fluid p-0 ">
     <!-- Navbar -->
- <nav class="navbar  navbar-expand-lg navbar-light ">
-  <div class="container-fluid">
-    <a class="navbar-brand nav-link" href="../index.html"><img src="../src/icons/360_logog_short-removebg-preview[1].png" width="120" alt=""></a>
-    <button class="navbar-toggler badge-success  " type="button " data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon "></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link  text-dark " aria-current="page" href="../index.html">Home</a>
-        </li>
-        
-        <li class="nav-item dropdown">
-          <a class="nav-link  text-dark  dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Product-Categories
-          </a>
-          <ul class="dropdown-menu navbar-light ">
-
-
+    <nav class="navbar  navbar-expand-lg navbar-light ">
+      <div class="container-fluid">
+        <a class="navbar-brand nav-link" href="index.html"><img src="src/icons/360_logog_short-removebg-preview[1].png" width="120" alt=""></a>
+        <button class="navbar-toggler badge-success  " type="button " data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon "></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active text-dark" aria-current="page" href="../index.html">Home</a>
+            </li>
             
-            <li><a class="nav-link  text-dark  dropdown-item" href="MILLETS&FLOURS.html">MILLETS & FLOURS</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link text-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Product Categories
+              </a>
+              <ul class="dropdown-menu navbar-light ">
 
-            <li><a class="nav-link  text-dark  dropdown-item" href="REGIONAL&BASMATIRICE.html">REGIONAL & BASMATI RICE</a></li>
+
+                
+                <li><a class="nav-link text-dark dropdown-item" href="MILLETS&FLOURS.html#page-heading">MILLETS & FLOURS</a></li>
+
+                <li><a class="nav-link text-dark dropdown-item" href="REGIONAL&BASMATIRICE.html#page-heading">REGIONAL & BASMATI RICE</a></li>
+                
+                <li><a class="nav-link text-dark dropdown-item" href="LENTILS.html#page-heading">LENTILS</a></li>
+
+                <li><a class="nav-link text-dark dropdown-item" href="SNACKS.html#page-heading"> SNACKS</a></li>
+
+                <li><a class="nav-link text-dark dropdown-item" href="BAKERYPRODUCTS.html#page-heading">BAKERY PRODUCTS</a></li>
+
+                <li><a class="nav-link text-dark dropdown-item" href="FROZENVEG.&FRUITS.html#page-heading">FROZEN VEG. & FRIUTS</a></li>
+
+                <li><a class="nav-link text-dark dropdown-item" href="BLANDED&WHOLESPICES.html#page-heading">BLANDED & WHOLE SPICES</a></li>
+
+                <li><a class="nav-link text-dark dropdown-item" href="PICKLES&CANNEDFOOD.html#page-heading">PICKLES & CANNED FOOD</a></li>
+
+                <li><a class="nav-link text-dark dropdown-item" href="JAGGER&SUGAR.html#page-heading">JAGGER & SUGAR</a></li>
+               
+                <li><a class="nav-link text-dark dropdown-item" href="DRYFRUITY&HEALTHYSNACKS.html#page-heading">DRY FRUITS & HEALTHY SNACKS</a></li>
+
+                <li><a class=" nav-link text-dark dropdown-item" href="DRINK&BEVERAGES.html#page-heading">DRINK & BEVERAGES</a></li>
+                
+                <a class="nav-link text-dark dropdown-item" href="AMULPRODUCTS.html#page-heading">AMUL PRODUCTS</a>
+
+                <a class="nav-link text-dark dropdown-item" href="POOJASAMAGRI&HOUSEHOLDPRODUCTS.html#page-heading">POOJA SAMAGRI & HOUSEHOLD PRODUCTS </a>
+
+              
+
+                
+
+              </ul>
+            </li>
             
-            <li><a class="nav-link  text-dark  dropdown-item" href="LENTILS.html">LENTILS</a></li>
-
-            <li><a class="nav-link  text-dark  dropdown-item" href="SNACKS.html"> SNACKS</a></li>
-
-            <li><a class="nav-link   text-dark dropdown-item" href="BAKERYPRODUCTS.html">BAKERY PRODUCTS</a></li>
-
-            <li><a class="nav-link   text-dark dropdown-item" href="FROZENVEG.&FRUITS.html">FROZEN VEG. & FRIUTS</a></li>
-
-            <li><a class="nav-link  text-dark  dropdown-item" href="BLANDED&WHOLESPICES.html">BLANDED & WHOLE SPICES</a></li>
-
-            <li><a class="nav-link   text-dark dropdown-item" href="PICKLES&CANNEDFOOD.html">PICKLES & CANNED FOOD</a></li>
-
-            <li><a class="nav-link  text-dark  dropdown-item" href="JAGGER&SUGAR.html">JAGGER & SUGAR</a></li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="VISION&MISSION.html">Vision & Mission</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="Aboutus.html">About Us</a>
+            
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="contactus.html">Contact Us</a>
+            </li>
            
-            <li><a class="nav-link  text-dark  dropdown-item" href="DRYFRUITY&HEALTHYSNACKS.html">DRY FRUITS & HEALTHY SNACKS</a></li>
-
-            <li><a class=" nav-link  text-dark  dropdown-item" href="DRINK&BEVERAGES.html">DRINK & BEVERAGES</a></li>
-            
-            <a class="nav-link  text-dark  dropdown-item" href="AMULPRODUCTS.html">AMUL PRODUCTS</a>
-
-                  <a class="nav-link  text-dark  dropdown-item" href="POOJASAMAGRI.html">POOJA SAMAGRI</a>
-
-                  <a class="nav-link  text-dark  dropdown-item" href="HOUSEHOLDPRODUCTS.html">HOUSEHOLD PRODUCTS</a>
           </ul>
-        </li>
-        
-        <li class="nav-item">
-          <a class="nav-link text-dark  " href="VISION&MISSION.html">Vision & Mission</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link  text-dark " href="Aboutus.html">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark  " href="contactus.html">Contact Us</a>
-        </li>
-       
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="searchbtn  btn btn-outline-success  fs-6" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="searchbtn  btn btn-outline-success  fs-6" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    
 <!-- Navbar End -->
  
 <h2 class="text-center mt-5 mb-3 ">ABOUT US</h2>
@@ -498,47 +639,59 @@ a{  text-decoration: none;}
 
 
 
- <!-- Footer -->
-
- <footer class="footer-container mt-5 container-fluid bg-success">
-  <div class="container-fluid">
-   <div class="row">
-     <div class="footer-col">
-       <h4>About Us</h4>
-      <p class="text-light">UNIVERSAL FOOD RETREAT PRIVATE LIMITED is a leading exporter of Indian food products, committed to quality and global standards. With 25+ years of experience, our brands Kanaiya and Nature’s 360° are trusted worldwide.</p>
-     </div>
-     <div class="footer-col">
-       <h4>Company</h4>
-       <ul>
-         <li><a href="Aboutus.html">About Us</a></li>
-         <li><a href="#">Our services</a></li>
-         <li><a href="VISION&MISSION.html">Vision & Mission</a></li>
-         <li><a href="#">privacy policy</a></li>
+  <!-- Footer -->
+  <footer class="footer-container mt-5">
+    <div class="container-fluid">
+        <!-- Contact Form Section -->
+        <div class="form-container mb-5">
+            <div class="custom-form-box">
+                <h2>Submit Your Requirements</h2>
+                <p>Just One Step Ahead - Fill in your details and let us help you!</p>
+                <form action="https://formspree.io/f/xwpokpen" method="post">
+                    <input type="text" name="name" placeholder="Enter your name" required>
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <textarea name="message" placeholder="Enter your message" required></textarea>
+                    <button class="custom-submit-btn " type="submit"><a  class="text-light"   >Send Email</a></button>
+                </form>
+            </div>
+        </div>
         
-       </ul>
-     </div>
-     <div class="footer-col">
-       <h4>Get in Touch</h4>
-       <ul>
-         <li class="text-light">Plot no 5250, near 4th south road, beaide khwaja chowkdi, GIDC, Ankleshwar-393001
-         </li>
-         <li class="text-light">info@360degreeexport.Com
-           </li>
-         <li class="text-light">📞+91 9879133911 </li>
-       </ul>
-     </div>
-     <div class="footer-col">
-       <h4>follow us</h4>
-       <div class="social-links">
-         <a href="#"><i class="fab fa-facebook-f"></i></a>
-         <a href="#"><i class="fab fa-twitter"></i></a>
-         <a href="#"><i class="fab fa-instagram"></i></a>
-         <a href="#"><i class="fab fa-linkedin-in"></i></a>
-       </div>
-     </div>
-   </div>
-  </div>
-</footer>
+        <!-- Footer Content -->
+        <div class="row">
+            <div class="footer-col">
+                <h4>About Us</h4>
+                <p>UNIVERSAL FOOD RETREAT PRIVATE LIMITED is a leading exporter of Indian food products, committed to quality and global standards. With 25+ years of experience, our brands Kanaiya and Nature’s 360° are trusted worldwide.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul class="no-bullets">
+                    <li><a href="Aboutus.html">About Us</a></li>
+                    <li><a href="CONTACTUS.html">Our Services</a></li>
+                    <li><a href="VISION&MISSION.html">Vision & Mission</a></li>
+                    <li><a href="Aboutus.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Get in Touch</h4>
+                <ul class="no-bullets">
+                    <li>📍 Plot no 5250, near 4th south road, beside Khwaja Chowkdi, GIDC, Ankleshwar-393001</li>
+                    <li>📧 info@360degreeexport.com</a></li>
+                    <li>📞+91 9879133911</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1BwWc1fDBk/?mibextid=wwXIfr "><i class="fab fa-facebook-f"></i></a>
+                    
+                    <a href="https://www.instagram.com/360degreeexport?igsh=MXp4emE1dHF1aTUx "><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/360degreeexport?igsh=MXp4emE1dHF1aTUx "><img src="../src/icons/pinterest-logo.png" alt="pinterest-logo" width="25px"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+  
   <!-- Footer End -->
 
 
